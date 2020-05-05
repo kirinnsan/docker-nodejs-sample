@@ -1,0 +1,24 @@
+version: "3"
+services:
+  app:
+    build: ./app
+    tty: true
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    image: node-app
+    container_name: node-web-app
+
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: user1
+      MYSQL_PASSWORD: user1pass
+    volumes:
+      - ./mysql/db:/docker-entrypoint-initdb.d
+    container_name: mysql-db
+    ports:
+      - 3306:3306

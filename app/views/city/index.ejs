@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Welcome Page</title>
+</head>
+
+<body>
+  <main role="main" class="container">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>名前</th>
+        <th>シティコード</th>
+        <th>地区コード</th>
+        <th>人口</th>
+      </tr>
+      <% for(let content of contents) { %>
+      <tr>
+        <th><%= content.ID %></th>
+        <td><%= content.Name %></td>
+        <td><%= content.CountryCode %></td>
+        <td><%= content.District %></td>
+        <td><%= content.Population %></td>
+      </tr>
+      <% } %>
+    </table>
+  </main>
+</body>
+
+</html>
